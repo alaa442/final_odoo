@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="iti_warehouse_tree" model="ir.ui.view">
+            <field name="name">iti.warehouse.tree</field>
+            <field name="model">iti.warehouse</field>
+            <field name="arch" type="xml">
+                <tree string="Warehouses">
+                    <field name="address"/>
+                    <field name="keeper_id"/>
+                    <field name="manager_id"/>
+                    <field name="super_manager_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="iti_warehouse_form" model="ir.ui.view">
+            <field name="name">iti.warehouse.form</field>
+            <field name="model">iti.warehouse</field>
+            <field name="arch" type="xml">
+                <form string="Warehouse" version="7.0">
+                    <sheet>
+                        <group string="Basic Info">
+                            <field name="address"/>
+                            <field name="keeper_id"/>
+                            <field name="manager_id"/>
+                            <field name="super_manager_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="iti_warehouse_action" model="ir.actions.act_window">
+            <field name="name">ITI Warehouse</field>
+            <field name="res_model">iti.warehouse</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="top_warehouse" name="WareHouse"/>
+        <menuitem id="iti_warehouse_menu" name="ITI WareHouse" parent="top_warehouse"/>
+        <menuitem id="iti_warehouse_view" name="Show WareHouses" parent="iti_warehouse_menu"
+                  action="iti_warehouse_action"/>
+
+
+
+        <record id="iti_product_tree" model="ir.ui.view">
+            <field name="name">iti.product.tree</field>
+            <field name="model">iti.product</field>
+            <field name="arch" type="xml">
+                <tree string="Products">
+                    <field name="name"/>
+                    <field name="warehouse_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="iti_product_form" model="ir.ui.view">
+            <field name="name">iti.product.form</field>
+            <field name="model">iti.product</field>
+            <field name="arch" type="xml">
+                <form string="Product" version="7.0">
+                    <sheet>
+
+                        <header>
+                            <button name="product_recieved" string="Recieved" states="new"/>
+                            <button name="product_under_review" string="Under Review" states="recieved"/>
+                            <button name="product_approved_commit1" string="Commitee 1" states="underReview"/>
+                            <button name="product_approved_commit2" string="Commitee 2" states="underReview"/>
+                            <button name="product_approved_commit3" string="Commitee 3" states="underReview"/>
+                            <button name="product_keeper_confirm" string="Keeper Confirm" states="approved"/>
+                            <button name="product_manager_confirm" string="Manager Confirm" states="keeperConfirm"/>
+                            <button name="product_in_stock" string="Super Manager Confirm" states="managerConfirm"/>
+                            <field name="state" widget="statusbar" statusbar_visible="new,recieved,underReview,approved,keeperConfirm,managerConfirm,inStock"/>
+                        </header>
+
+                        <group string="Basic Info">
+                            <field name="name"/>
+                            <field name="min"/>
+                            <field name="max"/>
+                            <field name="price"/>
+                            <field name="quantity"/>
+                            <field name="category_id"/>
+                            <field name="subcategory_id"/>
+                            <field name="subsubcategory_id"/>
+                            <field name="code"/>
+                            <field name="warehouse_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="iti_product_action" model="ir.actions.act_window">
+            <field name="name">ITI Products</field>
+            <field name="res_model">iti.product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="iti_product_view" name="Show products" parent="iti_warehouse_menu"
+                  action="iti_product_action"/>
+    </data>
+</openerp>
