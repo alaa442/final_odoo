@@ -63,6 +63,7 @@
             <field name="arch" type="xml">
                 <form string="Product" version="7.0">
                     <sheet>
+
                         <header>
                             <button name="product_recieved" string="Recieved" states="new"/>
                             <button name="product_under_review" string="Under Review" states="recieved"/>
@@ -72,17 +73,19 @@
                             <button name="product_keeper_confirm" string="Keeper Confirm" states="approved"/>
                             <button name="product_manager_confirm" string="Manager Confirm" states="keeperConfirm"/>
                             <button name="product_in_stock" string="Super Manager Confirm" states="managerConfirm"/>
-
-
                             <field name="state" widget="statusbar" statusbar_visible="new,recieved,underReview,approved,keeperConfirm,managerConfirm,inStock"/>
-
                         </header>
+
                         <group string="Basic Info">
                             <field name="name"/>
                             <field name="min"/>
                             <field name="max"/>
                             <field name="price"/>
-                            <field name="status"/>
+                            <field name="quantity"/>
+                            <field name="category_id"/>
+                            <field name="subcategory_id"/>
+                            <field name="subsubcategory_id"/>
+                            <field name="code"/>
                             <field name="warehouse_id"/>
                         </group>
                     </sheet>
