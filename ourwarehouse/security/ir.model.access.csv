@@ -1,4 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_warehouse_keeper,access.warehouse.keeper,model_iti_students,group_warehouse_keeper,1,0,0,0
-access_warehouse_manager,access.warehouse.manager,model_iti_students,group_warehouse_manager,1,0,0,0
-access_warehouse_super_manager,access.warehouse.super.manager,model_iti_students,group_warehouse_super_manager,1,1,1,1
+access_warehouse_keeper,access.warehouse.keeper,model_iti_warehouse,group_warehouse_keeper,1,1,1,1
+access_warehouse_manager,access.warehouse.manager,model_iti_warehouse,group_warehouse_manager,1,0,0,0
+access_warehouse_super_manager,access.warehouse.super.manager,model_iti_warehouse,group_warehouse_super_manager,1,1,1,1
+
+access_product_keeper,access.product.keeper,model_iti_product,group_warehouse_keeper,1,1,1,1
+access_product_manager,access.product.manager,model_iti_product,group_warehouse_manager,1,1,1,1
+access_product_super_manager,access.product.super.manager,model_iti_product,group_warehouse_super_manager,1,1,1,1

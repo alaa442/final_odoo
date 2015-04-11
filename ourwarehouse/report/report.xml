@@ -2,10 +2,11 @@
 <openerp>
     <data>
         <report id="report_products"
-                name="Products report"
-                string="Products Report"
+                name="Products Report"
+                string="تقرير المنتج"
                 model="iti.product"
                 file="ourwarehouse/report/report.mako"
-                report_type="webkit"/>
+                report_type="webkit"
+                />
     </data>
 </openerp>

@@ -9,11 +9,12 @@
             ==========================
         This is just another project
     """,
-    'depends': [],
+    'depends': ['base', 'report_webkit'],
     'data': [
         'ourwarehouse_view.xml',
         'ourwarehouse_workflow.xml',
-        'security/ourwarehouse_security.xml',
+         'security/ir.model.access.csv',
+        'security/iti_security.xml',
         'report/report.xml',
     ],
 
